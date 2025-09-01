@@ -1,0 +1,94 @@
+<div class="container mt-4">
+  <h2 class="mb-4">Cadastro de Usuário</h2>
+
+  <form [formGroup]="form" (ngSubmit)="salvar()">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Nome</label>
+        <input formControlName="nome" class="form-control" />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email</label>
+        <input formControlName="email" type="email" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label class="form-label">Data de Nascimento</label>
+        <input formControlName="dataNascimento" type="date" class="form-control" />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Gênero</label>
+        <select formControlName="genero" class="form-select">
+          <option value="">Selecione</option>
+          <option value="masculino">Masculino</option>
+          <option value="feminino">Feminino</option>
+          <option value="outro">Outro</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Renda Salarial</label>
+        <input formControlName="renda" type="number" class="form-control" />
+      </div>
+    </div>
+
+    <fieldset class="border p-3 mb-3">
+      <legend class="float-none w-auto px-2">Escolaridade</legend>
+      <div class="row">
+        <div class="col-md-6">
+          <label class="form-label">Nível</label>
+          <select [formControl]="form.get('escolaridade.nivel')" class="form-select">
+            <option value="">Selecione</option>
+            <option value="Ensino Fundamental">Ensino Fundamental</option>
+            <option value="Ensino Médio">Ensino Médio</option>
+            <option value="Técnico">Técnico</option>
+            <option value="Superior">Superior</option>
+            <option value="Especialização/MBA">Especialização/MBA</option>
+            <option value="Mestrado">Mestrado</option>
+            <option value="Doutorado">Doutorado</option>
+          </select>
+        </div>
+        <div class="col-md-6">
+          <label class="form-label">Situação</label>
+          <select [formControl]="form.get('escolaridade.situacao')" class="form-select">
+            <option value="">Selecione</option>
+            <option value="Em andamento">Em andamento</option>
+            <option value="Concluído">Concluído</option>
+            <option value="Desistente">Desistente</option>
+          </select>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="row mb-3">
+      <div class="col-md-4">
+        <label class="form-label">CEP</label>
+        <input formControlName="cep" class="form-control" (blur)="buscarEndereco()" />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Estado</label>
+        <input formControlName="estado" class="form-control" readonly />
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">Cidade</label>
+        <input formControlName="cidade" class="form-control" readonly />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label class="form-label">Bairro</label>
+        <input formControlName="bairro" class="form-control" readonly />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Logradouro</label>
+        <input formControlName="logradouro" class="form-control" readonly />
+      </div>
+    </div>
+
+    <div class="text-end">
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+  </form>
+</div>
