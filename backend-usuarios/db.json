@@ -1,0 +1,89 @@
+{
+  "usuarios": [
+    {
+      "nome": "Cristina Preis Silva",
+      "email": "cristina@gmail.com",
+      "dataNascimento": "1984-02-12",
+      "genero": "feminino",
+      "renda": 3500,
+      "escolaridade": {
+        "nivel": "Superior",
+        "situacao": "Concluído"
+      },
+      "cep": "88035100",
+      "estado": "SC",
+      "cidade": "Florianópolis",
+      "bairro": "Santa Mônica",
+      "logradouro": "Rua Nery Cardoso Bittencourt",
+      "id": "1756731889034"
+    },
+    {
+      "nome": "Alfredo Santos",
+      "email": "alfredo@gmail.com",
+      "dataNascimento": "1972-12-01",
+      "genero": "masculino",
+      "renda": 5000,
+      "escolaridade": {
+        "nivel": "Ensino Médio",
+        "situacao": "Concluído"
+      },
+      "cep": "89010-000",
+      "estado": "SC",
+      "cidade": "Blumenau",
+      "bairro": "Centro",
+      "logradouro": "Rua 15 de Novembro",
+      "id": "1756732306809"
+    },
+    {
+      "nome": "Luciana Moura",
+      "email": "luciana@gmail.com",
+      "dataNascimento": "2000-07-25",
+      "genero": "feminino",
+      "renda": 7000,
+      "escolaridade": {
+        "nivel": "Superior",
+        "situacao": "Concluído"
+      },
+      "cep": "89201-000",
+      "estado": "SC",
+      "cidade": "Joinville",
+      "bairro": "Centro",
+      "logradouro": "Rua do Príncipe",
+      "id": "1756732989878"
+    },
+    {
+      "nome": "Dione Pimentel",
+      "email": "dione@gmail.com",
+      "dataNascimento": "1993-08-14",
+      "genero": "masculino",
+      "renda": 2500,
+      "escolaridade": {
+        "nivel": "Ensino Médio",
+        "situacao": "Desistente"
+      },
+      "cep": "89801-000",
+      "estado": "SC",
+      "cidade": "Chapecó",
+      "bairro": "Centro",
+      "logradouro": "Avenida Getúlio Dorneles Vargas - N",
+      "id": "1756733121801"
+    },
+    {
+      "nome": "Vitor Muller Schreiber",
+      "email": "vitor@gmail.com",
+      "dataNascimento": "1992-04-14",
+      "genero": "masculino",
+      "renda": 15000,
+      "escolaridade": {
+        "nivel": "Mestrado",
+        "situacao": "Concluído"
+      },
+      "cep": "89010-000",
+      "estado": "SC",
+      "cidade": "Blumenau",
+      "bairro": "Centro",
+      "logradouro": "Rua 15 de Novembro",
+      "id": "1756733865975"
+    }
+  ]
+}
