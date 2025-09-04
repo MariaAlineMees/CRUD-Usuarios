@@ -39,14 +39,6 @@ Uma rota especial de métricas fornece uma visão analítica dos usuários cadas
 
 ---
 
-## 📁 Estrutura do Projeto
-
-O projeto está organizado em duas pastas principais na raiz do repositório:
-crud-usuarios/ ├── backend-usuarios/   # Código do servidor Node.js └── frontend-usuarios/  # Código do projeto Angular
-
-
----
-
 ## 🛠️ Como Rodar o Projeto
 
 ### 🔧 Pré-requisitos
