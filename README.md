@@ -9,6 +9,18 @@ A aplicação é dividida em dois componentes principais:
 
 ---
 
+## 🖼️ Exemplos da Interface
+
+### 🧾 Tela de Cadastro
+
+<img src="frontend-usuarios/assets/cadastro.png" width="400"/>
+📋 Lista de Usuários
+<img src="frontend-usuarios/assets/usuarios.png" width="400"/>
+📊 Métricas dos Usuários
+<img src="frontend-usuarios/assets/metricas.png" width="400"/>
+
+---
+
 ## ✨ Funcionalidades
 
 ### 📋 Cadastro de Usuários (CRUD)
