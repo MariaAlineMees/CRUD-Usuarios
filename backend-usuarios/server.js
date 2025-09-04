@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-// O db.json vai ser seu banco de dados
+// O db.json vai ser o banco de dados
 const dbPath = path.resolve(__dirname, 'db.json');
 
 // Função de validação dos campos
