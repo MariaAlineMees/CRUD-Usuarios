@@ -12,27 +12,27 @@ export class UsuarioService {
   constructor(private http: HttpClient) {}
 
   getUsuarios(): Observable<any> {
-    // ✅ URL corrigida para a rota do back-end
+    // ✅ URL a rota do back-end
     return this.http.get(`${this.apiUrl}/usuarios`);
   }
 
   criarUsuario(usuario: any): Observable<any> {
-    // ✅ URL corrigida para a rota do back-end
+    // ✅ URL para a rota do back-end
     return this.http.post(`${this.apiUrl}/usuarios`, usuario);
   }
 
   atualizarUsuario(id: string, usuario: any): Observable<any> {
-    // ✅ URL corrigida para a rota do back-end
+    // ✅ URL para a rota do back-end
     return this.http.put(`${this.apiUrl}/usuarios/${id}`, usuario);
   }
 
   deletarUsuario(id: string): Observable<any> {
-    // ✅ URL corrigida para a rota do back-end
+    // ✅ URL para a rota do back-end
     return this.http.delete(`${this.apiUrl}/usuarios/${id}`);
   }
 
   getMetricas(): Observable<any> {
-    // ✅ URL corrigida para a rota do back-end
+    // ✅ URL para a rota do back-end
     return this.http.get(`${this.apiUrl}/metricas`);
   }
 }
