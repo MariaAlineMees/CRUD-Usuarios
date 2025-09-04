@@ -26,7 +26,7 @@ interface Metricas {
   styleUrls: ['./metricas.css']
 })
 export class MetricasComponent implements OnInit {
-  // ✅ Agora a variável 'metricas' tem um tipo definido
+  // ✅ A variável 'metricas' tem um tipo definido
   metricas: Metricas = {
     total: 0,
     genero: { masculino: 0, feminino: 0, outro: 0 },
@@ -39,7 +39,7 @@ export class MetricasComponent implements OnInit {
   constructor(private usuarioService: UsuarioService) {}
 
   ngOnInit(): void {
-    // ✅ Atribuímos o tipo 'Metricas' aos dados recebidos
+    // ✅ O tipo 'Metricas' aos dados recebidos
     this.usuarioService.getMetricas().subscribe({
       next: (data: Metricas) => {
         this.metricas = data;
