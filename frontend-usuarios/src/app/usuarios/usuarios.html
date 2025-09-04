@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="container mt-5">
   <div class="card shadow-sm border-start border-primary mb-4">
     <div class="card-body">
@@ -32,4 +33,30 @@
       </div>
     </div>
   </div>
+=======
+<div class="container mt-4">
+  <h2 class="mb-4">Lista de Usuários</h2>
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-dark">
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+        <th>Estado</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of usuarios">
+        <td>{{ u.nome }}</td>
+        <td>{{ u.email }}</td>
+        <td>{{ u.estado }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="editar(u)">Editar</button>
+          <button class="btn btn-sm btn-danger" (click)="excluir(u.id)">Excluir</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
 </div>

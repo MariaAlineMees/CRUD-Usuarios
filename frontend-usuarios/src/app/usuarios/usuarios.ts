@@ -6,7 +6,11 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-usuarios',
   standalone: true,
+<<<<<<< HEAD
   imports: [CommonModule], 
+=======
+  imports: [CommonModule],
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
   templateUrl: './usuarios.html',
   styleUrls: ['./usuarios.css']
 })
@@ -32,4 +36,8 @@ export class UsuariosComponent implements OnInit {
       });
     }
   }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054

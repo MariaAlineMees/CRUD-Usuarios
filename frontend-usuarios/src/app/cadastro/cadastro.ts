@@ -3,6 +3,10 @@ import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { UsuarioService } from '../services/usuario';
 import { CommonModule } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
+<<<<<<< HEAD
+=======
+import { Router } from '@angular/router';
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
 
 @Component({
   selector: 'app-cadastro',
@@ -13,11 +17,21 @@ import { HttpClient } from '@angular/common/http';
 })
 export class CadastroComponent implements OnInit {
   form: any;
+<<<<<<< HEAD
+=======
+  editando = false;
+  usuarioId: string | null = null;
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
 
   constructor(
     private fb: FormBuilder,
     private usuarioService: UsuarioService,
+<<<<<<< HEAD
     private http: HttpClient
+=======
+    private http: HttpClient,
+    private router: Router
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
   ) {}
 
   ngOnInit(): void {
@@ -40,11 +54,17 @@ export class CadastroComponent implements OnInit {
 
     const usuario = history.state.usuario;
     if (usuario) {
+<<<<<<< HEAD
+=======
+      this.editando = true;
+      this.usuarioId = usuario.id;
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
       this.form.patchValue(usuario);
     }
   }
 
   buscarEndereco() {
+<<<<<<< HEAD
     const cep = this.form.value.cep;
     if (!cep || cep.length < 8) return;
 
@@ -56,12 +76,34 @@ export class CadastroComponent implements OnInit {
         bairro: data.bairro,
         logradouro: data.logradouro
       });
+=======
+    const cep = this.form.get('cep')?.value;
+    if (!cep || cep.length < 8) return;
+
+    this.http.get(`https://viacep.com.br/ws/${cep}/json/`).subscribe({
+      next: (data: any) => {
+        if (data.erro) {
+          alert('CEP não encontrado ou inválido.');
+          return;
+        }
+        this.form.patchValue({
+          estado: data.uf,
+          cidade: data.localidade,
+          bairro: data.bairro,
+          logradouro: data.logradouro
+        });
+      },
+      error: () => {
+        alert('Erro ao buscar o CEP. Tente novamente.');
+      }
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
     });
   }
 
   salvar() {
     console.log('Método salvar chamado');
     if (this.form.invalid) {
+<<<<<<< HEAD
       alert('Formulário inválido!');
       return;
     }
@@ -76,6 +118,37 @@ export class CadastroComponent implements OnInit {
       this.usuarioService.criarUsuario(this.form.value).subscribe(() => {
         alert('Usuário cadastrado com sucesso!');
         this.form.reset();
+=======
+      alert('Por favor, preencha todos os campos obrigatórios!');
+      return;
+    }
+
+    const usuarioData = this.form.value;
+
+    if (this.editando && this.usuarioId) {
+      this.usuarioService.atualizarUsuario(this.usuarioId, usuarioData).subscribe({
+        next: () => {
+          alert('Usuário atualizado com sucesso!');
+          this.form.reset();
+          this.router.navigate(['/usuarios']);
+        },
+        error: (err) => {
+          console.error(err);
+          alert('Erro ao atualizar o usuário.');
+        }
+      });
+    } else {
+      this.usuarioService.criarUsuario(usuarioData).subscribe({
+        next: () => {
+          alert('Usuário cadastrado com sucesso!');
+          this.form.reset();
+          this.router.navigate(['/usuarios']);
+        },
+        error: (err) => {
+          console.error(err);
+          alert('Erro ao cadastrar o usuário. Verifique se o servidor está rodando.');
+        }
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
       });
     }
   }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -133,3 +134,93 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+=======
+<div class="container mt-4">
+    <h2 class="mb-4">Métricas dos Usuários</h2>
+
+    <div class="row">
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Total de Usuários</h5>
+                    <p class="card-text">{{ metricas.total }}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Por Gênero</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Masculino: {{ metricas.genero.masculino }}</li>
+                        <li class="list-group-item">Feminino: {{ metricas.genero.feminino }}</li>
+                        <li class="list-group-item">Outro: {{ metricas.genero.outro }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Por Estado</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let estado of metricas.porEstado | keyvalue">
+                            {{ estado.key }}: {{ estado.value }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row mt-4">
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Por Faixa Etária</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let faixa of metricas.faixaEtaria | keyvalue">
+                            {{ faixa.key }}: {{ faixa.value }}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Por Renda Salarial</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let item of metricas.renda | keyvalue">
+                            {{ item.key }}: {{ item.value.quantidade }} ({{ item.value.percentual | number:'1.2-2' }}%)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-md-12 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Por Escolaridade</h5>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item" *ngFor="let item of metricas.escolaridade | keyvalue">
+                            {{ item.key }}: {{ item.value.quantidade }} ({{ item.value.percentual | number:'1.2-2' }}%)
+                            <ul class="list-group list-group-flush ms-4 mt-2">
+                                <li class="list-group-item" *ngFor="let situacao of item.value.situacoes | keyvalue">
+                                    - {{ situacao.key }}: {{ situacao.value }}
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+>>>>>>> 993e2dbee4de8a918a4f0e4349848cf8ba9dd054
