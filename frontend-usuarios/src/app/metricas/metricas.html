@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Métricas dos Usuários</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    .card:hover {
+      transform: scale(1.02);
+      transition: all 0.3s ease-in-out;
+    }
+    .card-title i {
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container mt-5">
+    <h2 class="mb-4 text-center">📊 Métricas dos Usuários</h2>
+
+    <div class="row">
+      <!-- Total de Usuários -->
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card border-start border-primary shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-people-fill me-2"></i>Total de Usuários</h5>
+            <p class="card-text display-6 fw-bold text-primary">{{ metricas.total }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Por Gênero -->
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card border-start border-success shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-gender-ambiguous me-2"></i>Por Gênero</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Masculino</span>
+                <span>{{ metricas.genero?.masculino }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Feminino</span>
+                <span>{{ metricas.genero?.feminino }}</span>
+              </li>
+              <li class="list-group-item d-flex justify-content-between">
+                <span>Outro</span>
+                <span>{{ metricas.genero?.outro }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Por Estado -->
+      <div class="col-sm-6 col-lg-4 mb-4">
+        <div class="card border-start border-warning shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-geo-alt-fill me-2"></i>Por Estado</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between" *ngFor="let estado of estadosKeys">
+                <span>{{ estado }}</span>
+                <span>{{ metricas.porEstado[estado] }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <!-- Faixa Etária -->
+      <div class="col-md-6 mb-4">
+        <div class="card border-start border-info shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-calendar-range me-2"></i>Por Faixa Etária</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between" *ngFor="let faixa of faixaEtariaKeys">
+                <span>{{ faixa }}</span>
+                <span>{{ metricas.faixaEtaria[faixa] }}</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Renda Salarial -->
+      <div class="col-md-6 mb-4">
+        <div class="card border-start border-danger shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-cash-stack me-2"></i>Renda Salarial</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item d-flex justify-content-between" *ngFor="let faixa of rendaKeys">
+                <span>{{ faixa }}</span>
+                <span>
+                  {{ metricas.renda[faixa]?.quantidade }} 
+                  ({{ metricas.renda[faixa]?.percentual | number:'1.0-2' }}%)
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Escolaridade -->
+    <div class="row">
+      <div class="col-12 mb-4">
+        <div class="card border-start border-secondary shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-mortarboard-fill me-2"></i>Grau de Escolaridade</h5>
+            <div *ngFor="let nivel of escolaridadeKeys" class="mb-3">
+              <strong>{{ nivel }}</strong>:
+              {{ metricas.escolaridade[nivel]?.quantidade }} 
+              ({{ metricas.escolaridade[nivel]?.percentual | number:'1.0-2' }}%)
+              <ul class="list-group mt-2">
+                <li class="list-group-item" *ngFor="let situacao of situacaoKeys(nivel)">
+                  {{ situacao }}: {{ metricas.escolaridade[nivel]?.situacoes[situacao] }}
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

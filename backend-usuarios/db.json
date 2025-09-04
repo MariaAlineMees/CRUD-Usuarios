@@ -1,0 +1,38 @@
+{
+  "usuarios": [
+    {
+      "id": "763f",
+      "nome": "Aline Souza",
+      "email": "aline@email.com",
+      "dataNascimento": "1995-08-31",
+      "genero": "feminino",
+      "renda": 3500,
+      "escolaridade": {
+        "nivel": "Superior",
+        "situacao": "Concluído"
+      },
+      "cep": "89010-000",
+      "estado": "SC",
+      "cidade": "Blumenau",
+      "bairro": "Centro",
+      "logradouro": "Rua XV de Novembro"
+    },
+    {
+      "id": "b93c",
+      "nome": "Aline Souza",
+      "email": "aline@email.com",
+      "dataNascimento": "1995-08-31",
+      "genero": "feminino",
+      "renda": 3500,
+      "escolaridade": {
+        "nivel": "Superior",
+        "situacao": "Concluído"
+      },
+      "cep": "89010-000",
+      "estado": "SC",
+      "cidade": "Blumenau",
+      "bairro": "Centro",
+      "logradouro": "Rua 15 de Novembro"
+    }
+  ]
+}
